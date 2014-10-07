@@ -1,1 +1,22 @@
 /* CSS declarations go here */
+#operators {
+	height: 30px;
+	margin-bottom: 15px;
+}
+
+#operators > button {
+	width: 40px;
+	margin-right: 10px;
+}
+
+#numbers > button {
+	margin-right: 8px;
+	width: 30px;
+	height: 30px;
+}
+
+button.selected {
+	background: rgb(65, 123, 224);
+	color: white;
+	border: 2px solid rgb(32, 73, 180);
+}
