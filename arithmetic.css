@@ -20,3 +20,7 @@ button.selected {
 	color: white;
 	border: 2px solid rgb(32, 73, 180);
 }
+
+ul.col {
+	list-style: none;
+}

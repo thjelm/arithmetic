@@ -12,30 +12,19 @@ if (Meteor.isClient) {
   });
 
   Template.config.events({
-    'click #operators > button': function(evt) {
+    'click #operators > button': function(evt, template) {
       var id = evt.currentTarget.id;
 
-      Session.set('add', "");
-      Session.set('subtract', "");
-      Session.set('multiply', "");
-      Session.set('divide', "");
-      Session.set(id, "selected");
+      template.$('#operators > button').removeClass('selected');
+      template.$('#' + id).addClass('selected');
+
       Session.set('operator', id);
     },
-    'click #numbers > button': function(evt) {
+    'click #numbers > button': function(evt, template) {
       var id = evt.currentTarget.id;
 
-      Session.set('one', '');
-      Session.set('two', '');
-      Session.set('three', '');
-      Session.set('four', '');
-      Session.set('five', '');
-      Session.set('six', '');
-      Session.set('seven', '');
-      Session.set('eight', '');
-      Session.set('nine', '');
-      Session.set('ten', '');
-      Session.set(id, 'selected');
+      template.$('#numbers > button').removeClass('selected');
+      template.$('#' + id).addClass('selected');
       Session.set('number', id);
     },
     'click #btn-add': function () {
@@ -43,10 +32,15 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
+
+  Template.ws_col.li_list = function() {
+    return [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+  }
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
   });
+
 }

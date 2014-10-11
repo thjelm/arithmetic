@@ -6,28 +6,43 @@
   <h1>Arithmetic</h1>
 
   {{> config}}
+
+  {{> worksheet}}
 </body>
 
 <template name="config">
 	<h2>Choose operator</h2>
 	<div id="operators">
-		<button id="add" class="{{class "add"}}">+</button>
-		<button id="subtract" class="{{class "subtract"}}">-</button>
-		<button id="multiply" class="{{class "multiply"}}">X</button>
-		<button id="divide" class="{{class "divide"}}">/</button>
+		<button id="add">+</button>
+		<button id="subtract">-</button>
+		<button id="multiply">X</button>
+		<button id="divide">&#247;</button>
 	</div>
 	<h2>Choose Number</h2>
 	<div id="numbers">
-		<button id="one" class="{{class "one"}}">1</button>
-		<button id="two" class="{{class "two"}}">2</button>
-		<button id="three" class="{{class "three"}}">3</button>
-		<button id="four" class="{{class "four"}}">4</button>
-		<button id="five" class="{{class "five"}}">5</button>
-		<button id="six" class="{{class "six"}}">6</button>
-		<button id="seven" class="{{class "seven"}}">7</button>
-		<button id="eight" class="{{class "eight"}}">8</button>
-		<button id="nine" class="{{class "nine"}}">9</button>
-		<button id="ten" class="{{class "ten"}}">10</button>
+		<button id="one">1</button>
+		<button id="two">2</button>
+		<button id="three">3</button>
+		<button id="four">4</button>
+		<button id="five">5</button>
+		<button id="six">6</button>
+		<button id="seven">7</button>
+		<button id="eight">8</button>
+		<button id="nine">9</button>
+		<button id="ten">10</button>
 	</div>
-  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="worksheet">
+	{{> ws_col}}
+	{{> ws_col}}
+	{{> ws_col}}
+</template>
+
+<template name="ws_col">
+	<ul class="col">
+		{{#each li_list}}
+			<li></li>
+		{{/each}}
+	</ul>
 </template>
