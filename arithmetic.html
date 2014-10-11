@@ -1,10 +1,11 @@
 <head>
   <title>arithmetic</title>
   <link rel="stylesheet" type="text/css" media="print" href="print.css" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Arithmetic</h1>
+  <h1 id="header">Arithmetic</h1>
 
   {{> config}}
 
@@ -12,35 +13,38 @@
 </body>
 
 <template name="config">
-	<h2>Choose operator</h2>
-	<div id="operators">
-		<button id="Addition">+</button>
-		<button id="Subtraction">-</button>
-		<button id="Multiplication">X</button>
-		<button id="Division">&#247;</button>
-	</div>
-	<h2>Choose Number</h2>
-	<div id="numbers">
-		<button id="one">1</button>
-		<button id="two">2</button>
-		<button id="three">3</button>
-		<button id="four">4</button>
-		<button id="five">5</button>
-		<button id="six">6</button>
-		<button id="seven">7</button>
-		<button id="eight">8</button>
-		<button id="nine">9</button>
-		<button id="ten">10</button>
-	</div>
+	<section id="options">
+		<h2>Choose operator</h2>
+		<div id="operators">
+			<button id="Addition">+</button>
+			<button id="Subtraction">-</button>
+			<button id="Multiplication">X</button>
+			<button id="Division">&#247;</button>
+		</div>
+		<h2>Choose Number</h2>
+		<div id="numbers">
+			<button id="one">1</button>
+			<button id="two">2</button>
+			<button id="three">3</button>
+			<button id="four">4</button>
+			<button id="five">5</button>
+			<button id="six">6</button>
+			<button id="seven">7</button>
+			<button id="eight">8</button>
+			<button id="nine">9</button>
+			<button id="ten">10</button>
+		</div>
+	</section>
 </template>
 
 <template name="worksheet">
-	<div id="worksheet">
+	<section id="worksheet">
 		<p>{{operation}} Facts for {{number}}</p>
+		<i id="btn-print" class="fa fa-print fa-2x"></i>
 		{{> ws_col}}
 		{{> ws_col}}
 		{{> ws_col}}
-	</div>
+	</section>
 </template>
 
 <template name="ws_col">

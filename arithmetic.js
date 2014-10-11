@@ -53,6 +53,12 @@ if (Meteor.isClient) {
     number: function() {
       return Session.get('number');
     }
+  });
+
+  Template.worksheet.events({
+    'click #btn-print': function(evt) {
+      print();
+    }
   })
 
   Template.ws_col.li_list = function() {

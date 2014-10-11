@@ -1,4 +1,10 @@
 /* CSS declarations go here */
+#options {
+	margin-bottom: 30px;
+	border-bottom: 1px solid black;
+	padding-bottom: 16px;
+}
+
 #operators {
 	height: 30px;
 	margin-bottom: 15px;
@@ -23,6 +29,7 @@ button.selected {
 
 #worksheet {
 	width: 660px;
+	position: relative;
 }
 
 #worksheet > p {
@@ -42,4 +49,19 @@ ul.col > li {
 	margin-bottom: 8px;
 	font-size: 16pt;
 	font-family: Helvetica;
+}
+
+#btn-print {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+#btn-print:hover {
+	color: rgb(32, 155, 212);
+	-webkit-transform: scale(1.2, 1.2);
+	-moz-transform: scale(1.2, 1.2);
+	-ms-transform: scale(1.2, 1.2);
+	-o-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
 }
