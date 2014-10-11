@@ -13,19 +13,31 @@ if (Meteor.isClient) {
 
   Template.config.events({
     'click #operators > button': function(evt, template) {
-      var id = evt.currentTarget.id;
+      var id = evt.currentTarget.id,
+        number = Session.get('number'),
+        operator = $('#' + id).text();
 
       template.$('#operators > button').removeClass('selected');
       template.$('#' + id).addClass('selected');
 
-      Session.set('operator', id);
+      Session.set('operator', operator);
+
+      if (!!number) {
+        generateWorksheet(operator, number)
+      }
     },
     'click #numbers > button': function(evt, template) {
-      var id = evt.currentTarget.id;
+      var id = evt.currentTarget.id,
+        operator = Session.get('operator'),
+        number = $('#' + id).text();
 
       template.$('#numbers > button').removeClass('selected');
       template.$('#' + id).addClass('selected');
-      Session.set('number', id);
+      Session.set('number', number);
+
+      if (!!operator) {
+        generateWorksheet(operator, number);
+      }
     },
     'click #btn-add': function () {
       // increment the counter when button is clicked

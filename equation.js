@@ -7,9 +7,14 @@ generateEquation = function(operator, number) {
 		number_pos = randomIntFromInterval(0,1);
 
 	if (number_pos) {
-		return other_number + ' ' + operator + ' ' + number + ' = ';
+		return other_number + ' ' + operator + ' ' + number + ' = ______';
 	} else {
-		return number + ' ' + operator + ' ' + other_number + ' = ';
+		return number + ' ' + operator + ' ' + other_number + ' = ______';
 	}
 }
 
+generateWorksheet = function(operator, number) {
+	$('#worksheet li').each(function() {
+		$(this).html(generateEquation(operator, number));
+	});
+}

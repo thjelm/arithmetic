@@ -23,4 +23,13 @@ button.selected {
 
 ul.col {
 	list-style: none;
+	float: left;
+	width: 220px;
+	padding-left: 0;
+}
+
+ul.col > li {
+	margin-bottom: 10px;
+	font-size: 18pt;
+	font-family: Helvetica;
 }
