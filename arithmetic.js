@@ -1,6 +1,8 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault("counter", 0);
+  Session.setDefault("number", 3);
+  Session.setDefault("operator", "+");
+  Session.setDefault("operation", "Addition");
+  Session.setDefault("default_number", "three");
 
   Template.config.helpers({
     class: function(id) {
@@ -39,12 +41,15 @@ if (Meteor.isClient) {
       if (!!operator) {
         generateWorksheet(operator, number);
       }
-    },
-    'click #btn-add': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
     }
   });
+
+  Template.config.rendered = function(evt, template) {
+    var operator_id = Session.get('operation'),
+      number_id = Session.get('default_number');
+
+      this.$('#' + operator_id + ', #' + number_id).addClass('selected');
+  }
 
   Template.worksheet.helpers({
     operation: function() {
@@ -59,7 +64,14 @@ if (Meteor.isClient) {
     'click #btn-print': function(evt) {
       print();
     }
-  })
+  });
+
+  Template.worksheet.rendered = function() {
+    var operator = Session.get('operator'),
+      number = Session.get('number');
+
+    generateWorksheet(operator, number);
+  }
 
   Template.ws_col.li_list = function() {
     return [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
