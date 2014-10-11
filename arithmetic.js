@@ -21,6 +21,7 @@ if (Meteor.isClient) {
       template.$('#' + id).addClass('selected');
 
       Session.set('operator', operator);
+      Session.set('operation', id);
 
       if (!!number) {
         generateWorksheet(operator, number)
@@ -44,6 +45,15 @@ if (Meteor.isClient) {
       Session.set("counter", Session.get("counter") + 1);
     }
   });
+
+  Template.worksheet.helpers({
+    operation: function() {
+      return Session.get('operation');
+    },
+    number: function() {
+      return Session.get('number');
+    }
+  })
 
   Template.ws_col.li_list = function() {
     return [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];

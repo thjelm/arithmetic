@@ -1,5 +1,6 @@
 <head>
   <title>arithmetic</title>
+  <link rel="stylesheet" type="text/css" media="print" href="print.css" />
 </head>
 
 <body>
@@ -13,10 +14,10 @@
 <template name="config">
 	<h2>Choose operator</h2>
 	<div id="operators">
-		<button id="add">+</button>
-		<button id="subtract">-</button>
-		<button id="multiply">X</button>
-		<button id="divide">&#247;</button>
+		<button id="Addition">+</button>
+		<button id="Subtraction">-</button>
+		<button id="Multiplication">X</button>
+		<button id="Division">&#247;</button>
 	</div>
 	<h2>Choose Number</h2>
 	<div id="numbers">
@@ -35,6 +36,7 @@
 
 <template name="worksheet">
 	<div id="worksheet">
+		<p>{{operation}} Facts for {{number}}</p>
 		{{> ws_col}}
 		{{> ws_col}}
 		{{> ws_col}}

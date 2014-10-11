@@ -21,6 +21,16 @@ button.selected {
 	border: 2px solid rgb(32, 73, 180);
 }
 
+#worksheet {
+	width: 660px;
+}
+
+#worksheet > p {
+	text-align: center;
+	font-size: 16pt;
+	margin: 10px 0;
+}
+
 ul.col {
 	list-style: none;
 	float: left;
@@ -29,7 +39,7 @@ ul.col {
 }
 
 ul.col > li {
-	margin-bottom: 10px;
-	font-size: 18pt;
+	margin-bottom: 8px;
+	font-size: 16pt;
 	font-family: Helvetica;
 }
